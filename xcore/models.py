@@ -98,6 +98,8 @@ class Producto(SoftDeletionModel):
 	categoria = models.ForeignKey(DetalleTabla, on_delete=models.SET_NULL, related_name='categoria_producto', null=True)
 	unidad = models.ForeignKey(DetalleTabla, on_delete=models.SET_NULL, null=True, related_name='unidad_producto')
 	precio = models.DecimalField('Precio Base', max_digits=6, decimal_places=2)
+	minimo = models.IntegerField('Existencia Mínima', null=True)
+	maximo = models.IntegerField('Existencia Máxima', null=True)
 
 	def __str__(self):
 		return self.descripcion.upper()

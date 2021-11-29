@@ -92,7 +92,7 @@ class DetalleAsiento(models.Model):
 	asiento = models.ForeignKey(Asiento, on_delete=models.CASCADE)
 	cuenta = models.ForeignKey(Cuenta, on_delete=models.PROTECT)
 	movimiento = models.CharField(choices=[('db', 'Débito'), ('cr', 'Crédito')], max_length=2)
-	monto = models.DecimalField(max_digits=6, decimal_places=2)
+	monto = models.DecimalField(max_digits=8, decimal_places=2)
 
 	class Meta:
 		ordering = ['cuenta', 'movimiento']
